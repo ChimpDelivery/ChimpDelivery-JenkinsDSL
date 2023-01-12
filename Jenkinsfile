@@ -1,1 +1,10 @@
-
+pipelineJob('Seed_Test') 
+{
+    definition 
+    {
+        cps 
+        {
+            script(readFileFromWorkspace('vars/create_organization.groovy'))
+        }
+    }
+}
