@@ -84,20 +84,22 @@ organizationFolder(REPO_OWNER)
             localMarker("")
             matchBranches(true)
             remoteJenkinsFile("files/Jenkinsfile")
-            remoteJenkinsFileSCM{
-            gitSCM
+            remoteJenkinsFileSCM
             {
-                userRemoteConfigs
+                gitSCM
                 {
-                    userRemoteConfig
+                    userRemoteConfigs
                     {
-                      name("TalusWebBackend-JenkinsDSL") // Custom Repository Name or ID
-                      url("https://github.com/TalusStudio/TalusWebBackend-JenkinsDSL.git") //URL for the repository
-                      refspec("master") // Branch spec
-                      credentialsId("GIT_ACCOUNT") // Credential ID. Leave blank if not required
+                        userRemoteConfig
+                        {
+                        name("TalusWebBackend-JenkinsDSL") // Custom Repository Name or ID
+                        url("https://github.com/TalusStudio/TalusWebBackend-JenkinsDSL.git") //URL for the repository
+                        refspec("master") // Branch spec
+                        credentialsId("GIT_ACCOUNT") // Credential ID. Leave blank if not required
+                        }
+                        browser{} // Leave blank for default Git Browser
+                        gitTool("") //Leave blank for default git executable
                     }
-                    browser{} // Leave blank for default Git Browser
-                    gitTool("") //Leave blank for default git executable
                 }
             }
         }
