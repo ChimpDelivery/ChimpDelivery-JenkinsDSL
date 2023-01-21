@@ -1,0 +1,109 @@
+@Library("TalusWebBackend-JenkinsLibrary") _
+
+pipeline
+{
+    agent any
+
+    parameters
+    {
+        booleanParam(name: "INVOKE_PARAMETERS", defaultValue: true, description: "Do you wish to do a dry run to grab parameters?")
+        choice(name: "PLATFORM", choices: ['Appstore', 'GooglePlay'], description: "App Platform")
+        string(name: "APP_ID", defaultValue: "-1", description: "Dashboard App ID")
+        string(name: "STORE_BUILD_VERSION", defaultValue: "1.0", description: "Store Application Version")
+        booleanParam(name: "STORE_CUSTOM_BUNDLE_VERSION", defaultValue: false, description: "Do you set custom app build number?")
+        string(name: "STORE_BUNDLE_VERSION", defaultValue: "1", description: "Store Bundle Version")
+        string(name: "DASHBOARD_PROFILE_UUID", defaultValue: "DASHBOARD_DEFAULT_PROFILE_UUID", description: "iOS Provision Profile UUID")
+        string(name: "DASHBOARD_TEAM_ID", defaultValue: "DASHBOARD_DEFAULT_TEAM_ID", description: "iOS Provision Profile Team ID")
+        booleanParam(name: "INSTALL_SDK", defaultValue: false, description: "Do you wish to install backend packages?")
+    }
+
+    environment
+    {
+        // backend settings
+        BACKEND_API_URL = credentials('BACKEND_API_URL') // dashboard url
+        BACKEND_API_KEY = credentials('BACKEND_API_KEY') // api-token in users db
+
+        // notification settings
+        DISCORD_WEBHOOK_URL = credentials('DISCORD_WEBHOOK_URL') // (channel->settings->integrations)
+
+        // unity settings
+        UNITY_VERSION = '2021.3.5f1'
+        UNITY_PATH = "/Applications/Unity/Hub/Editor/${UNITY_VERSION}/Unity.app/Contents/MacOS/Unity"
+        UNITY_USERNAME = credentials('UNITY_USERNAME')
+        UNITY_PASSWORD = credentials('UNITY_PASSWORD')
+        UNITY_SERIAL = credentials('UNITY_SERIAL')
+
+        // unity execution points
+        UNITY_ASSET_METHOD = 'TalusBackendData.Editor.AssetProvider.iOS.Runner.CollectAssets'
+        UNITY_PACKAGE_METHOD = 'TalusSettings.Editor.SdkRunner.Run'
+        UNITY_BUILD_METHOD = "${params.PLATFORM == 'Appstore' ? "TalusCI.Editor.BuildActions.IOSRelease" : "TalusCI.Editor.BuildActions.AndroidRelease"}"
+
+        // store version
+        STORE_VERSION = "${params.STORE_CUSTOM_BUNDLE_VERSION == true ? params.STORE_BUNDLE_VERSION : BUILD_NUMBER}"
+
+        // ios related
+        TESTFLIGHT_USER_ACCOUNT = credentials('TF_USER_ACCOUNT')
+
+        // android related
+        ANDROID_KEYSTORE_PASS = credentials('ANDROID_KEYSTORE_PASS')
+    }
+
+    stages
+    {
+        stage('Prepare')
+        {
+            when { anyOf {
+                expression { params.INVOKE_PARAMETERS == true }
+                expression { params.APP_ID == "-1" }
+            } }
+
+            steps { parameterizeJob() }
+        }
+
+        stage('Version')
+        {
+            steps { runVersionStage() }
+        }
+
+        stage('SDK')
+        {
+            when { expression { params.INSTALL_SDK == true } }
+            steps { runSdkStage() }
+        }
+
+        stage('UnityBuild')
+        {
+            steps { runUnityBuildStage() }
+        }
+
+        stage('iOS-Sign')
+        {
+            when { expression { params.PLATFORM == 'Appstore' } }
+            steps { runXcodeSignStage() }
+        }
+
+        stage('iOS-Archieve')
+        {
+            when { expression { params.PLATFORM == 'Appstore' } }
+            steps { runXcodeArchiveStage() }
+        }
+
+        stage('iOS-Ipa')
+        {
+            when { expression { params.PLATFORM == 'Appstore' } }
+            steps { runXcodeIpaStage() }
+        }
+
+        stage('Upload')
+        {
+            options { timeout(time: 30, unit: 'MINUTES') }
+            steps { runUploadStage() }
+        }
+    }
+
+    post
+    {
+        always { notifyDiscord() }
+        cleanup { clearProjectArtifacts() }
+    }
+}
