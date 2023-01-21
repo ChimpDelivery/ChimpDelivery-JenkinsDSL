@@ -87,13 +87,13 @@ organizationFolder(REPO_OWNER)
                     {
                         userRemoteConfig
                         {
-                            name("TalusWebBackend-JenkinsDSL") // Custom Repository Name or ID
-                            url("https://github.com/TalusStudio/TalusWebBackend-JenkinsDSL.git") //URL for the repository
-                            refspec("master") // Branch spec
-                            credentialsId("GIT_ACCOUNT") // Credential ID. Leave blank if not required
+                            name("TalusWebBackend-JenkinsDSL")
+                            url("https://github.com/TalusStudio/TalusWebBackend-JenkinsDSL.git")
+                            refspec("master")
+                            credentialsId("GIT_ACCOUNT")
                         }
-                        browser{} // Leave blank for default Git Browser
-                        gitTool("") //Leave blank for default git executable
+                        browser{}
+                        gitTool("")
                     }
                 }
             }
