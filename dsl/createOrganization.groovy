@@ -78,5 +78,28 @@ organizationFolder(REPO_OWNER)
         {
             scriptPath('Jenkinsfile')
         }
+        
+        remoteJenkinsFileWorkflowMultiBranchProjectFactory
+        {
+            localMarker("")
+            matchBranches(true)
+            remoteJenkinsFile("files/Jenkinsfile")
+            remoteJenkinsFileSCM{
+            gitSCM
+            {
+                userRemoteConfigs
+                {
+                    userRemoteConfig
+                    {
+                      name("TalusWebBackend-JenkinsDSL") // Custom Repository Name or ID
+                      url("https://github.com/TalusStudio/TalusWebBackend-JenkinsDSL.git") //URL for the repository
+                      refspec("master") // Branch spec
+                      credentialsId("GIT_ACCOUNT") // Credential ID. Leave blank if not required
+                    }
+                    browser{} // Leave blank for default Git Browser
+                    gitTool("") //Leave blank for default git executable
+                }
+            }
+        }
     }
 }
