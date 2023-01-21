@@ -74,11 +74,6 @@ organizationFolder(REPO_OWNER)
 
     projectFactories
     {
-        workflowMultiBranchProjectFactory
-        {
-            scriptPath('Jenkinsfile')
-        }
-        
         remoteJenkinsFileWorkflowMultiBranchProjectFactory
         {
             localMarker("")
