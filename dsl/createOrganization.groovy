@@ -89,7 +89,7 @@ organizationFolder(REPO_OWNER)
                         {
                             name("TalusWebBackend-JenkinsDSL")
                             url("https://github.com/TalusStudio/TalusWebBackend-JenkinsDSL.git")
-                            refspec("master")
+                            refspec("")
                             credentialsId("GIT_ACCOUNT")
                         }
                         browser{}
