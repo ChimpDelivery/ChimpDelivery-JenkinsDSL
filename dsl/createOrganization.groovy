@@ -92,6 +92,8 @@ organizationFolder(REPO_OWNER)
                             refspec("")
                             credentialsId("GIT_ACCOUNT")
                         }
+                        browser{}
+                        gitTool("")
                     }
                 }
             }
