@@ -93,7 +93,7 @@ organizationFolder(REPO_OWNER)
                             credentialsId("GIT_ACCOUNT")
                         }
                         browser{}
-                        gitTool("git")
+                        gitTool("")
                     }
                 }
             }
