@@ -11,6 +11,7 @@ pipeline
             credentialType: 'Secret Text',
             required: true
          )
+    }
     
     stages
     {
