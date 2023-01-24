@@ -1,9 +1,8 @@
-library identifier: 'TalusWebBackend-JenkinsLibrary@master',
-        retriever: modernSCM([
-            $class: 'GitSCMSource',
-            credentialsId: 'GIT_ACCOUNT',
-            remote: 'https://github.com/TalusStudio/TalusWebBackend-JenkinsLibrary.git'
-        ])
+library identifier: 'TalusWebBackend-JenkinsLibrary@master', retriever: modernSCM([
+    $class: 'GitSCMSource',
+    credentialsId: 'GIT_ACCOUNT',
+    remote: 'https://github.com/TalusStudio/TalusWebBackend-JenkinsLibrary.git'
+])
 
 pipeline
 {
