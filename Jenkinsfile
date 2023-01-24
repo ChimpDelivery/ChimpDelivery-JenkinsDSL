@@ -18,7 +18,7 @@ pipeline
         {
             steps
             {
-                echo "Hello World!"
+                jobDsl targets: 'dsl/createOrganization.groovy'
             }
         }
     }
