@@ -6,7 +6,10 @@ pipeline
     {
         stage('Run')
         {
-            echo "Hello World!"
+            steps
+            {
+                echo "Hello World!"
+            }
         }
     }
 }
