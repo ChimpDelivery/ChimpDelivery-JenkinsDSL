@@ -20,6 +20,16 @@ organizationFolder(REPO_OWNER)
                     {
                         usernamePassword
                         {
+                            description('Dashboard username and personal access token')
+                            id('DASHBOARD_ACCOUNT')
+                            password(DASHBOARD_TOKEN)
+                            scope('GLOBAL')
+                            username('http://34.252.141.173')
+                            usernameSecret(false)
+                        }
+                        
+                        usernamePassword
+                        {
                             description('GIT username and personal access token')
                             id('GIT_USER_ACCOUNT')
                             password(GIT_ACCESS_TOKEN)
