@@ -23,9 +23,8 @@ pipeline
 
     environment
     {
-        // backend settings
-        BACKEND_API_URL = credentials('BACKEND_API_URL') // dashboard url
-        BACKEND_API_KEY = credentials('BACKEND_API_KEY') // api-token in users db
+        // talus dashboard auth
+        DASHBOARD_ACCOUNT = credentials('DASHBOARD_ACCOUNT')
 
         // notification settings
         DISCORD_WEBHOOK_URL = credentials('DISCORD_WEBHOOK_URL') // (channel->settings->integrations)
