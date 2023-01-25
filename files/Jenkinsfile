@@ -48,7 +48,6 @@ pipeline
         TESTFLIGHT_USER_ACCOUNT = credentials('TF_USER_ACCOUNT')
 
         // android related
-        ANDROID_KEYSTORE_PASS = credentials('ANDROID_KEYSTORE_PASS')
         ANDROID_NDK_ROOT = "/Applications/Unity/Hub/Editor/${UNITY_VERSION}/PlaybackEngines/AndroidPlayer/NDK"
     }
 
