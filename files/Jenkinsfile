@@ -60,6 +60,15 @@ pipeline
 
     stages
     {
+        stage('Checkout')
+        {
+            steps 
+            {
+                unlockKeychain()
+                checkout scm
+            }
+        }
+        
         stage('Prepare')
         {
             when { anyOf {
