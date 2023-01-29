@@ -8,11 +8,6 @@ pipeline
 {
     agent any
     
-    options 
-    {
-        skipDefaultCheckout()
-    }
-
     parameters
     {
         booleanParam(name: "INVOKE_PARAMETERS", defaultValue: true, description: "Do you wish to do a dry run to grab parameters?")
@@ -65,15 +60,6 @@ pipeline
 
     stages
     {
-        stage('Checkout')
-        {
-            steps 
-            {
-                unlockKeychain()
-                checkout scm
-            }
-        }
-        
         stage('Prepare')
         {
             when { anyOf {
