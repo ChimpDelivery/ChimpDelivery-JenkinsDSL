@@ -5,10 +5,7 @@ organizationFolder(REPO_OWNER)
 
     properties
     {
-        suppressFolderAutomaticTriggering
-        {
-            branches('auto-deploy');
-        }
+        suppressFolderAutomaticTriggering { branches('auto-deploy'); }
 
         folderCredentialsProperty
         {
