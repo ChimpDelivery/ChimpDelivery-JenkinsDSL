@@ -78,6 +78,8 @@ organizationFolder(REPO_OWNER)
                 {
                     strategyId(1)
                 }
+                
+                 githubSkipNotifications()
             }
         }
     }
