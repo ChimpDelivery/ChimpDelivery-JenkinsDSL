@@ -8,6 +8,11 @@ pipeline
 {
     agent any
     
+    options 
+    {
+        disableConcurrentBuilds()
+    }
+    
     parameters
     {
         booleanParam(name: "INVOKE_PARAMETERS", defaultValue: true, description: "Do you wish to do a dry run to grab parameters?")
