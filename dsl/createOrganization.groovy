@@ -67,19 +67,10 @@ organizationFolder(REPO_OWNER)
             repoOwner(REPO_OWNER)
             traits
             {
-                gitHubTopicsFilter
-                {
-                    topicList(GITHUB_TOPIC)
-                }
-
+                gitHubTopicsFilter { topicList(GITHUB_TOPIC) }
                 gitHubExcludeArchivedRepositories()
-
-                gitHubBranchDiscovery
-                {
-                    strategyId(1)
-                }
-                
-                 githubSkipNotifications()
+                gitHubBranchDiscovery { strategyId(1) }
+                githubSkipNotifications()
             }
         }
     }
