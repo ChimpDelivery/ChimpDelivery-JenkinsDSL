@@ -15,7 +15,7 @@ pipeline
     
     parameters
     {
-        booleanParam(name: "INVOKE_PARAMETERS", defaultValue: true, description: "Do you wish to do a dry run to grab parameters?")
+        booleanParam(name: "INVOKE_PARAMETERS", defaultValue: true, description: "Do you wish to do a Dry Run?")
         choice(name: "PLATFORM", choices: ['Appstore', 'GooglePlay'], description: "Deliver Platform")
         string(name: "APP_ID", defaultValue: "-1", description: "Dashboard App ID")
         string(name: "STORE_BUILD_VERSION", defaultValue: "1.0", description: "Store Application Version")
