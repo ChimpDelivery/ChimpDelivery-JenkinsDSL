@@ -77,7 +77,11 @@ pipeline
 
         stage('Version')
         {
-            steps { runVersionStage() }
+            steps 
+            {
+                echo "Unity3D Path:" + getUnityPath()
+                runVersionStage() 
+            }
         }
 
         stage('SDK')
