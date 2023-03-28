@@ -38,7 +38,7 @@ pipeline
         DISCORD_WEBHOOK_URL = credentials('DISCORD_WEBHOOK_URL') // (channel->settings->integrations)
 
         // unity settings
-        UNITY_PATH = getUnityPath(params.UNITY_VERSION)
+        UNITY_PATH = getUnityPath(unityVersion: params.UNITY_VERSION)
         UNITY_USERNAME = credentials('UNITY_USERNAME')
         UNITY_PASSWORD = credentials('UNITY_PASSWORD')
         UNITY_SERIAL = credentials('UNITY_SERIAL')
