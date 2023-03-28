@@ -81,7 +81,11 @@ pipeline
                 UNITY_PATH = getUnityPath()
             }
             
-            steps { runVersionStage() }
+            steps 
+            {
+                echo "UNITY_PATH: ${env.UNITY_PATH}"
+                runVersionStage() 
+            }
         }
 
         stage('SDK')
