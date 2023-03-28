@@ -23,7 +23,6 @@ pipeline
         string(name: "STORE_BUNDLE_VERSION", defaultValue: "1", description: "Store Bundle Version")
         string(name: "DASHBOARD_PROFILE_UUID", defaultValue: "DASHBOARD_DEFAULT_PROFILE_UUID", description: "iOS Provision Profile UUID")
         string(name: "DASHBOARD_TEAM_ID", defaultValue: "DASHBOARD_DEFAULT_TEAM_ID", description: "iOS Provision Profile Team ID")
-        booleanParam(name: "INSTALL_SDK", defaultValue: false, description: "Do you wish to install backend packages?")
         string(name: "UNITY_VERSION", defaultValue: "2021.3.5f1", description: "Target Unity3D Version")
     }
 
