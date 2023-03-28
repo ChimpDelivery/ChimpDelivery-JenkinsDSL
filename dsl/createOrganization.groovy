@@ -67,7 +67,6 @@ organizationFolder(REPO_OWNER)
                 gitHubTopicsFilter { topicList(GITHUB_TOPIC) }
                 gitHubExcludeArchivedRepositories()
                 gitHubBranchDiscovery { strategyId(1) }
-                githubSkipNotifications()
             }
         }
     }
