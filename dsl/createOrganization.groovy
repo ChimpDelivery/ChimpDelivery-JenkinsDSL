@@ -21,7 +21,7 @@ organizationFolder(REPO_OWNER)
                             id('DASHBOARD_ACCOUNT')
                             password(DASHBOARD_TOKEN)
                             scope('GLOBAL')
-                            username('http://34.252.141.173')
+                            username(DASHBOARD_URL)
                             usernameSecret(false)
                         }
                         
