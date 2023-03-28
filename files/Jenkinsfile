@@ -72,7 +72,11 @@ pipeline
                 expression { params.APP_ID == "-1" }
             } }
 
-            steps { parameterizeJob() }
+            steps 
+            {
+                echo "Unity3D Path:" + env.UNITY_PATH
+                parameterizeJob() 
+            }
         }
 
         stage('Version')
