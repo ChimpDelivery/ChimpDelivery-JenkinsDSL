@@ -78,12 +78,6 @@ pipeline
             steps { runVersionStage() }
         }
 
-        stage('SDK')
-        {
-            when { expression { params.INSTALL_SDK == true } }
-            steps { runSdkStage() }
-        }
-
         stage('UnityBuild')
         {
             steps { runUnityBuildStage() }
