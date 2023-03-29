@@ -31,13 +31,13 @@ pipeline
         // jenkins can be in external storage
         TOP_ROOT = '/Volumes/Mac'
         
-        // talus dashboard auth
+        // dashboard auth
         DASHBOARD_ACCOUNT = credentials('DASHBOARD_ACCOUNT')
 
         // notification settings
         DISCORD_WEBHOOK_URL = credentials('DISCORD_WEBHOOK_URL') // (channel->settings->integrations)
 
-        // unity settings
+        // unity3d settings
         UNITY_PATH = getUnityPath(unityVersion: params.UNITY_VERSION)
         UNITY_USERNAME = credentials('UNITY_USERNAME')
         UNITY_PASSWORD = credentials('UNITY_PASSWORD')
@@ -50,13 +50,14 @@ pipeline
         // store version
         STORE_VERSION = "${params.STORE_CUSTOM_BUNDLE_VERSION == true ? params.STORE_BUNDLE_VERSION : BUILD_NUMBER}"
 
-        // ios related
+        // ioS
         TESTFLIGHT_USER_ACCOUNT = credentials('TF_USER_ACCOUNT')
 
-        // android related
+        // android
         ANDROID_NDK_ROOT = "/Applications/Unity/Hub/Editor/${UNITY_VERSION}/PlaybackEngines/AndroidPlayer/NDK"
+        ANDROID_KEYSTORE_PASS = credentials('ANDROID_KEYSTORE_PASS')
         
-        // signing related
+        // ios-signing
         KEYCHAIN_LOCATION = new URI([ env.TOP_ROOT, env.HOME, 'Library/Keychains/login.keychain' ].join('/')).normalize().toString()
         KEYCHAIN_PASS = credentials('KEYCHAIN_PASSWORD')
     }
