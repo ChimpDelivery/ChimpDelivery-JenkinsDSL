@@ -6,7 +6,7 @@ library identifier: 'TalusWebBackend-JenkinsLibrary@master', retriever: modernSC
 
 pipeline
 {
-    agent { label 'Runner1' }
+    agent { label 'WINDOWS || MAC' }
     
     options 
     {
