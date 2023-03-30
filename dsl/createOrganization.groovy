@@ -44,6 +44,17 @@ organizationFolder(REPO_OWNER)
                             username(TESTFLIGHT_USERNAME)
                             usernameSecret(false)
                         }
+                        
+                        // Android Keystore Path and Pass. Example: Assets/Settings/Key.keystore:TestPass_123
+                        usernamePassword
+                        {
+                            description('Android Keystore path and pass')
+                            id('ANDROID_KEYSTORE')
+                            password(ANDROID_KEYSTORE_PASS)
+                            scope('GLOBAL')
+                            username(ANDROID_KEYSTORE_PATH)
+                            usernameSecret(false)
+                        }
 
                         domain
                         {
