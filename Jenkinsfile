@@ -1,6 +1,6 @@
 pipeline
 {
-    agent { label 'MASTER' }
+    agent any
     
     parameters 
     {
