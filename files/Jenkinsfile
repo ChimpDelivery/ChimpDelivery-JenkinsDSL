@@ -55,7 +55,7 @@ pipeline
 
         // android
         ANDROID_NDK_ROOT = "/Applications/Unity/Hub/Editor/${UNITY_VERSION}/PlaybackEngines/AndroidPlayer/NDK"
-        ANDROID_KEYSTORE_PASS = credentials('ANDROID_KEYSTORE_PASS')
+        ANDROID_KEYSTORE = credentials('ANDROID_KEYSTORE')
         
         // ios-signing
         KEYCHAIN_LOCATION = new URI([ env.TOP_ROOT, env.HOME, 'Library/Keychains/login.keychain' ].join('/')).normalize().toString()
