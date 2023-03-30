@@ -1,6 +1,6 @@
 # TalusWebBackend-JenkinsDSL
 
-All required pipelines by Jenkins Controller. Includes DSL scripts to create "Organization Folder" in Jenkins with connected GitHub organization and Unity3D Build/Deliver pipeline scripts.
+All required pipelines by Jenkins Controller(Master). Includes DSL scripts to create "Organization Folder" in Jenkins with connected GitHub organization and Unity3D Build/Deliver pipeline scripts.
 
 - [Seeder Job Pipeline](https://github.com/TalusStudio/TalusWebBackend-JenkinsDSL/blob/master/Jenkinsfile)
   - Creates organization folders in Jenkins. 
