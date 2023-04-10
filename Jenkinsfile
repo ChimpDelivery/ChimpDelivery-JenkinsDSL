@@ -15,6 +15,7 @@ pipeline
         credentials(name: 'ANDROID_KEYSTORE_FILE', description: 'key.keystore file is required by Unity3D to sign Android app.', defaultValue: 'default_android_keystore_path', credentialType: 'Secret Text', required: true)
         credentials(name: 'ANDROID_KEYSTORE_PASS', description: 'key.keystore file pass is required by Unity3D to sign Android app.', defaultValue: 'default_android_keystore_pass', credentialType: 'Secret Text', required: true)
         credentials(name: 'GOOGLE_PLAY_SERVICE_ACCOUNT', description: 'google play service account json file', defaultValue: 'default_google_play_service_account', credentialType: 'Secret Text', required: true)
+        base64File 'small'
     }
     
     stages
