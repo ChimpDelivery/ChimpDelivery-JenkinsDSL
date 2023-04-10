@@ -23,7 +23,6 @@ pipeline
         {
             steps
             {
-                echo params.ANDROID_KEYSTORE_FILE
                 jobDsl targets: 'dsl/createOrganization.groovy'
             }
         }
