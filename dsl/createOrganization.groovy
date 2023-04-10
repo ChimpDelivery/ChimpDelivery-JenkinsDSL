@@ -55,6 +55,14 @@ organizationFolder(REPO_OWNER)
                             username(ANDROID_KEYSTORE_FILE)
                             usernameSecret(false)
                         }
+                        
+                        secretFile
+                        {
+                            description('Google Play Service Account')
+                            id('GOOGLE_SERVICE_ACCOUNT')
+                            scope('GLOBAL')
+                            file(GOOGLE_PLAY_SERVICE_ACCOUNT)
+                        }
 
                         domain
                         {
