@@ -47,7 +47,7 @@ pipeline
         CONVERTED_PLATFORM = "${params.PLATFORM == 'Appstore' ? 'iOS' : 'Android' }"
         
         // unity execution points
-        UNITY_ASSET_METHOD = "TalusCI.Editor.${CONVERTED_PLATFORM}.Runner.Run"
+        UNITY_ASSET_METHOD = "TalusCI.Editor.SettingProviders.${CONVERTED_PLATFORM}.Runner.Run"
         UNITY_BUILD_METHOD = "TalusCI.Editor.BuildSystem.BuildActions.${CONVERTED_PLATFORM}Release"
 
         // store version
