@@ -45,14 +45,14 @@ organizationFolder(REPO_OWNER)
                             usernameSecret(false)
                         }
                         
-                        // Android Keystore Path and Pass. Example: Assets/Settings/Key.keystore:TestPass_123
+                        // Android Keystore File and Pass.
                         usernamePassword
                         {
-                            description('Android Keystore path and pass')
+                            description('Android Keystore file and pass')
                             id('ANDROID_KEYSTORE')
                             password(ANDROID_KEYSTORE_PASS)
                             scope('GLOBAL')
-                            username(ANDROID_KEYSTORE_PATH)
+                            username(ANDROID_KEYSTORE_FILE)
                             usernameSecret(false)
                         }
 
