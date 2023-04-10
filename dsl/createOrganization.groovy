@@ -56,7 +56,7 @@ organizationFolder(REPO_OWNER)
                             usernameSecret(false)
                         }
                         
-                        secretFile
+                        file
                         {
                             description('Google Play Service Account')
                             id('GOOGLE_SERVICE_ACCOUNT')
