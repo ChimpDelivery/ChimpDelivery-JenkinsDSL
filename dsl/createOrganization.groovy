@@ -56,12 +56,14 @@ organizationFolder(REPO_OWNER)
                             usernameSecret(false)
                         }
                         
-                        file
+                        usernamePassword
                         {
                             description('Google Play Service Account')
                             id('GOOGLE_SERVICE_ACCOUNT')
+                            password(GOOGLE_PLAY_SERVICE_ACCOUNT)
                             scope('GLOBAL')
-                            file(GOOGLE_PLAY_SERVICE_ACCOUNT)
+                            username('GooglePlayServiceAccount')
+                            usernameSecret(false)
                         }
 
                         domain
