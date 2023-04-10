@@ -55,19 +55,7 @@ organizationFolder(REPO_OWNER)
                             username('ANDROID_KEYSTORE_PASS')
                             usernameSecret(false)
                         }
-                        
-                        withFileParameter('ANDROID_KEYSTORE_FILE') {
-                            usernamePassword
-                            {
-                                description('test')
-                                id('test')
-                                password('')
-                                scope('GLOBAL')
-                                username('test')
-                                usernameSecret(false)
-                            }
-                        }
-                        
+                           
                         //usernamePassword
                         //{
                         //    description('Google Play Service Account')
