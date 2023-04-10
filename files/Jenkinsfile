@@ -44,8 +44,8 @@ pipeline
         UNITY_SERIAL = credentials('UNITY_SERIAL')
 
         // unity execution points
-        UNITY_ASSET_METHOD = 'TalusBackendData.Editor.Providers.Asset.iOS.Runner.CollectAssets'
-        UNITY_BUILD_METHOD = "${params.PLATFORM == 'Appstore' ? "TalusCI.Editor.BuildActions.IOSRelease" : "TalusCI.Editor.BuildActions.AndroidRelease"}"
+        UNITY_ASSET_METHOD = "TalusBackendData.Editor.Providers.Asset.${params.PLATFORM}.Runner.Run"
+        UNITY_BUILD_METHOD = "TalusCI.Editor.BuildActions.${params.platform}"
 
         // store version
         STORE_VERSION = "${params.STORE_CUSTOM_BUNDLE_VERSION == true ? params.STORE_BUNDLE_VERSION : BUILD_NUMBER}"
