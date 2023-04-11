@@ -1,7 +1,3 @@
-withFileParameter('GOOGLE_PLAY_SERVICE_ACCOUNT') {
-    def googlePlayServiceAccount = new File($GOOGLE_PLAY_SERVICE_ACCOUNT).readFromBase64()
-}
-
 organizationFolder(REPO_OWNER)
 {
     description('This contains branch source jobs for GitHub')
@@ -64,7 +60,7 @@ organizationFolder(REPO_OWNER)
                         {
                             description('Google Play Service Account')
                             id('GOOGLE_SERVICE_ACCOUNT')
-                            password(googlePlayServiceAccount)
+                            password(GOOGLE_PLAY_SERVICE_ACCOUNT)
                             scope('GLOBAL')
                             username('GooglePlayServiceAccount')
                             usernameSecret(false)
