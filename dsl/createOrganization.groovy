@@ -4,7 +4,7 @@ organizationFolder(REPO_OWNER)
     displayName(REPO_OWNER)
     
     withCredentials([secretText(credentialsId: 'my-creds-id', variable: 'MY_SECRET_FILE')]) {
-        "test"
+        echo "test"
     }
     
     properties
