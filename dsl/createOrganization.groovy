@@ -2,6 +2,11 @@ organizationFolder(REPO_OWNER)
 {
     description('This contains branch source jobs for GitHub')
     displayName(REPO_OWNER)
+    
+    environment
+    {
+        ENV_GOOGLE_PLAY_SERVICE_ACCOUNT = "${params.GOOGLE_PLAY_SERVICE_ACCOUNT}"
+    }
 
     properties
     {
@@ -60,7 +65,7 @@ organizationFolder(REPO_OWNER)
                         {
                             description('Google Play Service Account')
                             id('GOOGLE_SERVICE_ACCOUNT')
-                            password(env.ENV_GOOGLE_PLAY_SERVICE_ACCOUNT)
+                            password(ENV_GOOGLE_PLAY_SERVICE_ACCOUNT)
                             scope('GLOBAL')
                             username('GooglePlayServiceAccount')
                             usernameSecret(false)
