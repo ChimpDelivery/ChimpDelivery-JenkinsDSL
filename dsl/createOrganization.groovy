@@ -3,7 +3,7 @@ organizationFolder(REPO_OWNER)
     description('This contains branch source jobs for GitHub')
     displayName(REPO_OWNER)
     
-    withCredentials([secretText(credentialsId: 'my-creds-id', variable: 'MY_SECRET_FILE')]) {
+    withCredentials([string(credentialsId: 'my-creds-id', variable: 'MY_SECRET_FILE')]) {
         echo "test"
     }
     
