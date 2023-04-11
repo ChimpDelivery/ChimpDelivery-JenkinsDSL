@@ -3,11 +3,6 @@ organizationFolder(REPO_OWNER)
     description('This contains branch source jobs for GitHub')
     displayName(REPO_OWNER)
     
-    environment
-    {
-        ENV_GOOGLE_PLAY_SERVICE_ACCOUNT = "${params.GOOGLE_PLAY_SERVICE_ACCOUNT}"
-    }
-
     properties
     {
         suppressFolderAutomaticTriggering { branches('auto-deploy'); }
