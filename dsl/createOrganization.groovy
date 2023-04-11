@@ -3,8 +3,8 @@ organizationFolder(REPO_OWNER)
     description('This contains branch source jobs for GitHub')
     displayName(REPO_OWNER)
     
-    withCredentials([secretFile(credentialsId: 'my-creds-id', variable: 'MY_SECRET_FILE')]) {
-
+    withCredentials([secretText(credentialsId: 'my-creds-id', variable: 'MY_SECRET_FILE')]) {
+        ....
     }
     
     properties
