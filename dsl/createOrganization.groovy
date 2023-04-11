@@ -3,6 +3,10 @@ organizationFolder(REPO_OWNER)
     description('This contains branch source jobs for GitHub')
     displayName(REPO_OWNER)
     
+    withCredentials([secretFile(credentialsId: 'my-creds-id', variable: 'MY_SECRET_FILE')]) {
+
+    }
+    
     properties
     {
         suppressFolderAutomaticTriggering { branches('auto-deploy'); }
@@ -60,7 +64,7 @@ organizationFolder(REPO_OWNER)
                         {
                             description('Google Play Service Account')
                             id('GOOGLE_SERVICE_ACCOUNT')
-                            password("${ENV_GOOGLE_PLAY_SERVICE_ACCOUNT}")
+                            password(ENV_GOOGLE_PLAY_SERVICE_ACCOUNT)
                             scope('GLOBAL')
                             username('GooglePlayServiceAccount')
                             usernameSecret(false)
