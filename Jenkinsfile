@@ -30,7 +30,7 @@ pipeline
             steps
             {
                 jobDsl targets: 'dsl/createOrganization.groovy'
-                       additionalParameters: [ message: 'Hello from pipeline', credentials: 'SECRET' ]
+                       additionalParameters: [message: 'Hello from pipeline', credentials: 'SECRET']
             }
         }
     }
