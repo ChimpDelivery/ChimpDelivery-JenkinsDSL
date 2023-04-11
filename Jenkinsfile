@@ -22,7 +22,10 @@ pipeline
         stage('Run')
         {
             steps
-            {                
+            {
+                env.ANDROID_KEYSTORE_FILE = "${params.ANDROID_KEYSTORE_FILE}"
+                env.GOOGLE_PLAY_SERVICE_ACCOUNT = "${params.GOOGLE_PLAY_SERVICE_ACCOUNT}"
+                
                 jobDsl targets: 'dsl/createOrganization.groovy'
             }
         }
