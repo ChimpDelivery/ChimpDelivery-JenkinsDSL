@@ -1,3 +1,5 @@
+def googlePlayServiceAccount = new File(GOOGLE_PLAY_SERVICE_ACCOUNT).readFromBase64()
+
 organizationFolder(REPO_OWNER)
 {
     description('This contains branch source jobs for GitHub')
