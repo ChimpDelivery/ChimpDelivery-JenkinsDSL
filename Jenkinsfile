@@ -17,15 +17,18 @@ pipeline
         base64File 'GOOGLE_PLAY_SERVICE_ACCOUNT'
     }
     
+    environment
+    {
+        ENV_ANDROID_KEYSTORE_FILE = "${params.ANDROID_KEYSTORE_FILE}"
+        ENV_GOOGLE_PLAY_SERVICE_ACCOUNT = "${params.GOOGLE_PLAY_SERVICE_ACCOUNT}"
+    }
+    
     stages
     {
         stage('Run')
         {
             steps
             {
-                env.ANDROID_KEYSTORE_FILE = "${params.ANDROID_KEYSTORE_FILE}"
-                env.GOOGLE_PLAY_SERVICE_ACCOUNT = "${params.GOOGLE_PLAY_SERVICE_ACCOUNT}"
-                
                 jobDsl targets: 'dsl/createOrganization.groovy'
             }
         }
