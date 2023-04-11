@@ -14,7 +14,7 @@ pipeline
         credentials(name: 'TESTFLIGHT_PASSWORD', description: 'connected test-flight related app specific pass', defaultValue: 'default_tf_account_app_specific_pass', credentialType: 'Secret Text', required: true)
         base64File(name: 'ANDROID_KEYSTORE_FILE')
         credentials(name: 'ANDROID_KEYSTORE_PASS', description: 'key.keystore file pass is required by Unity3D to sign Android app.', defaultValue: 'default_android_keystore_pass', credentialType: 'Secret Text', required: true)
-        base64File(name: 'GOOGLE_PLAY_SERVICE_ACCOUNT')
+        base64File(name: 'GOOGLE_PLAY_SERVICE_ACCOUNT', description: 'Google Play Service Account json')
     }
     
     environment
