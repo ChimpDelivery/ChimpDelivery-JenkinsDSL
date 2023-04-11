@@ -30,7 +30,7 @@ pipeline
             steps
             {
                 jobDsl targets: 'dsl/createOrganization.groovy'
-                additionalParameters: [ GOOGLE_PLAY_SERVICE_ACCOUNT: "${params.GOOGLE_PLAY_SERVICE_ACCOUNT}"]
+                       additionalParameters: [ 'GOOGLE_PLAY_SERVICE_ACCOUNT': "${params.GOOGLE_PLAY_SERVICE_ACCOUNT}"]
             }
         }
     }
