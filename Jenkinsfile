@@ -28,7 +28,7 @@ pipeline
         {
             steps
             {
-                withEnv("ENV_GOOGLE_PLAY_SERVICE_ACCOUNT=${params.GOOGLE_PLAY_SERVICE_ACCOUNT}") {
+                withEnv(["ENV_GOOGLE_PLAY_SERVICE_ACCOUNT=${params.GOOGLE_PLAY_SERVICE_ACCOUNT}"]) {
                     jobDsl targets: 'dsl/createOrganization.groovy'
                 }
             }
