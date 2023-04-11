@@ -1,4 +1,6 @@
-def googlePlayServiceAccount = new File(GOOGLE_PLAY_SERVICE_ACCOUNT).readFromBase64()
+withFileParameter('GOOGLE_PLAY_SERVICE_ACCOUNT') {
+    def googlePlayServiceAccount = new File($GOOGLE_PLAY_SERVICE_ACCOUNT).readFromBase64()
+}
 
 organizationFolder(REPO_OWNER)
 {
