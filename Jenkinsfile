@@ -24,7 +24,7 @@ pipeline
             steps
             {
                 withFileParameter('ANDROID_KEYSTORE_FILE') {
-                    echo $ANDROID_KEYSTORE_FILE
+                    bat 'cat $ANDROID_KEYSTORE_FILE'
                 }
                 
                 jobDsl targets: 'dsl/createOrganization.groovy'
