@@ -60,7 +60,7 @@ organizationFolder(REPO_OWNER)
                         {
                             description('Google Play Service Account')
                             id('GOOGLE_SERVICE_ACCOUNT')
-                            password(ENV_GOOGLE_PLAY_SERVICE_ACCOUNT)
+                            password("${ENV_GOOGLE_PLAY_SERVICE_ACCOUNT}")
                             scope('GLOBAL')
                             username('GooglePlayServiceAccount')
                             usernameSecret(false)
