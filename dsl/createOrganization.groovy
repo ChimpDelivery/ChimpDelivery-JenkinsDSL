@@ -45,7 +45,6 @@ organizationFolder(REPO_OWNER)
                             usernameSecret(false)
                         }
                         
-                        // Android Keystore Pass
                         usernamePassword
                         {
                             description('Android Keystore file and pass')
@@ -55,16 +54,6 @@ organizationFolder(REPO_OWNER)
                             username('ANDROID_KEYSTORE_PASS')
                             usernameSecret(false)
                         }
-                           
-                        //usernamePassword
-                        //{
-                        //    description('Google Play Service Account')
-                        //    id('GOOGLE_SERVICE_ACCOUNT')
-                        //    password(ENV_GOOGLE_PLAY_SERVICE_ACCOUNT)
-                        //    scope('GLOBAL')
-                        //    username('GooglePlayServiceAccount')
-                        //    usernameSecret(false)
-                        //}
 
                         domain
                         {
