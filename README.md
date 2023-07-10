@@ -1,4 +1,4 @@
-# TalusWebBackend-JenkinsDSL
+# ChimpDelivery-JenkinsDSL
 
 :bookmark: All required pipelines by Jenkins Controller(Master). Includes DSL scripts to create "Organization Folder" in Jenkins with connected "GitHub Organization" and "Unity3D" Build/Deliver pipeline scripts.
 
