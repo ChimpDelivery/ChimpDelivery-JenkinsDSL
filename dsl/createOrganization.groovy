@@ -97,7 +97,7 @@ organizationFolder(REPO_OWNER)
                         userRemoteConfig
                         {
                             name("origin")
-                            url("https://github.com/TalusStudio/TalusWebBackend-JenkinsDSL.git")
+                            url("https://github.com/ChimpDelivery/ChimpDelivery-JenkinsDSL.git")
                             refspec("")
                             credentialsId("GIT_ACCOUNT")
                         }
