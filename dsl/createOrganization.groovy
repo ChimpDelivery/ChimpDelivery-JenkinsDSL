@@ -98,8 +98,8 @@ organizationFolder(REPO_OWNER)
                         {
                             name("origin")
                             url("https://github.com/ChimpDelivery/ChimpDelivery-JenkinsDSL.git")
-                            refspec("")
-                            credentialsId("GIT_ACCOUNT")
+                            refspec("master")
+                            credentialsId("")
                         }
                         browser{}
                         gitTool("")
