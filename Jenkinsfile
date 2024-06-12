@@ -1,11 +1,14 @@
 pipeline
 {
     agent any
-    
-    parameters 
+
+    parameters
     {
         credentials(name: 'DASHBOARD_URL', description: 'dashboard url', defaultValue: 'default_dashboard_url', credentialType: 'Secret Text', required: true)
         credentials(name: 'DASHBOARD_TOKEN', description: 'dashboard account token', defaultValue: 'default_dashboard_account_token', credentialType: 'Secret Text', required: true)
+        credentials(name: 'UNITY_SERIAL', description: 'unity3d serial', defaultValue: 'default_unity_serial', credentialType: 'Secret Text', required: true)
+        credentials(name: 'UNITY_USERNAME', description: 'unity3d username', defaultValue: 'default_unity_username', credentialType: 'Secret Text', required: true)
+        credentials(name: 'UNITY_PASSWORD', description: 'unity3d password', defaultValue: 'default_unity_password', credentialType: 'Secret Text', required: true)
         credentials(name: 'GIT_USERNAME', description: 'connected account name', defaultValue: 'default_account_name', credentialType: 'Secret Text', required: true)
         credentials(name: 'GIT_ACCESS_TOKEN', description: 'connected account token', defaultValue: 'default_account_token', credentialType: 'Secret Text', required: true)
         string(name: 'GITHUB_TOPIC', description: 'github repo topic', defaultValue: 'default_github_repo_topic')

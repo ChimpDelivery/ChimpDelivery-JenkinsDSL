@@ -37,8 +37,7 @@ pipeline
 
         // unity3d settings
         UNITY_PATH = getUnityPath(unityVersion: params.UNITY_VERSION)
-        UNITY_USERNAME = credentials('UNITY_USERNAME')
-        UNITY_PASSWORD = credentials('UNITY_PASSWORD')
+        UNITY_ACCOUNT = credentials('UNITY_ACCOUNT')
         UNITY_SERIAL = credentials('UNITY_SERIAL')
 
         //
