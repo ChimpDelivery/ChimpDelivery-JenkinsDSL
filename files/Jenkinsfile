@@ -6,13 +6,11 @@ library identifier: 'ChimpDelivery-JenkinsLibrary@master', retriever: modernSCM(
 
 pipeline
 {
-    agent { label 'WINDOWS || MAC' }
-    
-    options 
+    options
     {
         disableConcurrentBuilds()
     }
-    
+
     parameters
     {
         booleanParam(name: "INVOKE_PARAMETERS", defaultValue: true, description: "Do you wish to do a Dry Run?")
@@ -30,7 +28,7 @@ pipeline
     {
         // jenkins can be in external storage
         TOP_ROOT = '/Volumes/Mac'
-        
+
         // dashboard auth
         DASHBOARD_ACCOUNT = credentials('DASHBOARD_ACCOUNT')
 
@@ -45,7 +43,7 @@ pipeline
 
         //
         CONVERTED_PLATFORM = "${params.PLATFORM == 'Appstore' ? 'iOS' : 'Android' }"
-        
+
         // unity execution points
         UNITY_ASSET_METHOD = "TalusCI.Editor.SettingProviders.${CONVERTED_PLATFORM}.Runner.Run"
         UNITY_BUILD_METHOD = "TalusCI.Editor.BuildSystem.BuildActions.${CONVERTED_PLATFORM}Release"
@@ -59,7 +57,7 @@ pipeline
         // android
         ANDROID_NDK_ROOT = "/Applications/Unity/Hub/Editor/${UNITY_VERSION}/PlaybackEngines/AndroidPlayer/NDK"
         ANDROID_KEYSTORE = credentials('ANDROID_KEYSTORE')
-        
+
         // ios-signing
         KEYCHAIN_LOCATION = new URI([ env.TOP_ROOT, env.HOME, 'Library/Keychains/login.keychain' ].join('/')).normalize().toString()
         KEYCHAIN_PASS = credentials('KEYCHAIN_PASSWORD')
