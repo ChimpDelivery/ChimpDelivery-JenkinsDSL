@@ -6,6 +6,8 @@ library identifier: 'ChimpDelivery-JenkinsLibrary@master', retriever: modernSCM(
 
 pipeline
 {
+    agent any
+
     options
     {
         disableConcurrentBuilds()
