@@ -44,23 +44,21 @@ pipeline
         //
         CONVERTED_PLATFORM = "${params.PLATFORM == 'Appstore' ? 'iOS' : 'Android' }"
 
-        // unity execution points
+        // unity execute methods
         UNITY_ASSET_METHOD = "TalusCI.Editor.SettingProviders.${CONVERTED_PLATFORM}.Runner.Run"
         UNITY_BUILD_METHOD = "TalusCI.Editor.BuildSystem.BuildActions.${CONVERTED_PLATFORM}Release"
 
         // store version
         STORE_VERSION = "${params.STORE_CUSTOM_BUNDLE_VERSION == true ? params.STORE_BUNDLE_VERSION : BUILD_NUMBER}"
 
-        // ioS
+        // ios
         TESTFLIGHT_USER_ACCOUNT = credentials('TF_USER_ACCOUNT')
+        KEYCHAIN_LOCATION = new URI([ env.TOP_ROOT, env.HOME, 'Library/Keychains/login.keychain' ].join('/')).normalize().toString()
+        KEYCHAIN_PASS = credentials('KEYCHAIN_PASSWORD')
 
         // android
         ANDROID_NDK_ROOT = "/Applications/Unity/Hub/Editor/${UNITY_VERSION}/PlaybackEngines/AndroidPlayer/NDK"
         ANDROID_KEYSTORE = credentials('ANDROID_KEYSTORE')
-
-        // ios-signing
-        KEYCHAIN_LOCATION = new URI([ env.TOP_ROOT, env.HOME, 'Library/Keychains/login.keychain' ].join('/')).normalize().toString()
-        KEYCHAIN_PASS = credentials('KEYCHAIN_PASSWORD')
     }
 
     stages
