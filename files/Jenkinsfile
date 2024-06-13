@@ -1,6 +1,5 @@
 library identifier: 'ChimpDelivery-JenkinsLibrary@master', retriever: modernSCM([
     $class: 'GitSCMSource',
-    credentialsId: 'GIT_ACCOUNT',
     remote: 'https://github.com/ChimpDelivery/ChimpDelivery-JenkinsLibrary.git'
 ])
 
